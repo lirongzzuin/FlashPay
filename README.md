@@ -7,18 +7,16 @@
 
 ## 사용 기술 스택
 
-| 영역        | 기술 및 도구                                      |
-|-------------|--------------------------------------------------|
-| Language    | Java 17, Gradle                                  |
+| 영역        | 기술 및 도구                             |
+|-------------|-----------------------------------------|
+| Language    | Java 17, Gradle                         |
 | Framework   | Spring Boot, Spring MVC, Spring WebFlux, Spring Security |
-| 인증        | JWT (JSON Web Token)                             |
-| DB          | MySQL, Redis                                     |
-| Messaging   | Apache Kafka                                     |
-| 인프라      | Docker, Spring Cloud Config (선택 사항)          |
-| 문서화      | Swagger (OpenAPI 3.0)                            |
-| 테스트      | JMeter (성능 테스트)                             |
-
-> 💡 회사에서는 Java 11을 사용 중이지만, 이 프로젝트에서는 Java 17로 개발하며 Gradle 설정 및 IntelliJ 설정을 통해 프로젝트 단위로 버전을 분리해 적용합니다.
+| 인증        | JWT (JSON Web Token)                    |
+| DB          | MySQL, Redis                            |
+| Messaging   | Apache Kafka                            |
+| 인프라      | Docker, Spring Cloud Config         |
+| 문서화      | Swagger (OpenAPI 3.0)                   |
+| 테스트      | JMeter (성능 테스트)                     |
 
 ---
 
