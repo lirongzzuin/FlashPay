@@ -3,6 +3,7 @@ package com.flashpay.flashpay.controller;
 import com.flashpay.flashpay.domain.User;
 import com.flashpay.flashpay.service.UserService;
 import com.flashpay.flashpay.util.JwtUtil;
+import com.flashpay.flashpay.common.ApiResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -58,10 +59,10 @@ public class UserController {
         try {
             String username = getUsernameFromToken(token);
             return userService.findByUsername(username)
-                    .map(user -> ResponseEntity.ok(Collections.singletonMap("username", user.getUsername())))
-                    .orElse(ResponseEntity.status(404).body("사용자를 찾을 수 없습니다."));
+                    .map(user -> ResponseEntity.ok(ApiResponse.success("프로필 조회 성공", user.getUsername())))
+                    .orElse(ResponseEntity.status(404).body(ApiResponse.fail("사용자를 찾을 수 없습니다.", null)));
         } catch (Exception e) {
-            return ResponseEntity.status(401).body(e.getMessage());
+            return ResponseEntity.status(401).body(ApiResponse.fail("인증 실패: " + e.getMessage(), null));
         }
     }
 
